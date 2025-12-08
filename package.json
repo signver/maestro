@@ -1,0 +1,42 @@
+{
+  "name": "@signver/maestro",
+  "version": "1.0.0",
+  "exports": {
+    "./core": {
+      "import": "./dist/core/maestro-core.mjs",
+      "require": "./dist/core/maestro-core.cjs"
+    }
+  },
+  "scripts": {
+    "build": "npm run bundle && npm run types:cjs && npm run types:mjs",
+    "bundle": "webpack",
+    "types:cjs": "tsc -p tsconfig.cjs.json",
+    "types:mjs": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/signver/maestro.git"
+  },
+  "keywords": [],
+  "author": "Chua Siang Poh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/signver/maestro/issues"
+  },
+  "homepage": "https://github.com/signver/maestro#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "typescript": "^5.9.3",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/config"
+  ]
+}

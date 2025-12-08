@@ -1,0 +1,12 @@
+{
+  "name": "@signver/config",
+  "version": "1.0.0",
+  "exports": {
+    "./webpack": {
+      "import": "./webpack/index.mjs"
+    }
+  },
+  "devDependencies": {},
+  "license": "MIT",
+  "private": true
+}
