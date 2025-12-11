@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "exports": {
     "./core": {
-      "import": "./dist/core/maestro-core.mjs",
-      "require": "./dist/core/maestro-core.cjs"
+      "import": "./dist/maestro/index.mjs",
+      "require": "./dist/maestro/index.cjs"
     }
   },
   "scripts": {

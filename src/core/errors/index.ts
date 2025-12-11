@@ -1,2 +1,2 @@
+export * from "./maestro";
 export * from "./component";
-export * from "./errors";

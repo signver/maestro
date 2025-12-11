@@ -5,6 +5,7 @@ const projectPath = cwd();
 
 /** @type {import("webpack").Configuration} */
 const baseConfig = {
+  experiments: { outputModule: true },
   mode: "development",
   module: {
     rules: [
@@ -69,5 +70,33 @@ const coreOutputs = [
   },
 ];
 
+const distOutputs = [
+  {
+    ...baseConfig,
+    entry: "./src/index.ts",
+    output: {
+      ...baseConfig.output,
+      filename: "index.mjs",
+      library: {
+        type: "module",
+      },
+      path: path.resolve(projectPath, "dist/maestro/mjs"),
+    },
+  },
+  {
+    ...baseConfig,
+    entry: "./src/index.ts",
+    output: {
+      ...baseConfig.output,
+      filename: "index.cjs",
+      library: {
+        name: "maestro",
+        type: "commonjs",
+      },
+      path: path.resolve(projectPath, "dist/maestro/cjs"),
+    },
+  },
+];
+
 /** @type {Array<import("webpack").Configuration>} */
-export default [...coreOutputs];
+export default [...coreOutputs, ...distOutputs];
