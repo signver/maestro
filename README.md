@@ -1,6 +1,6 @@
 # Maestro
 
-A library to create a plugin-like system for your application.
+A simple declarative plugin library.
 
 # Usage guide
 
