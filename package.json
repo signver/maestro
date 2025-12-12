@@ -7,8 +7,11 @@
       "require": "./dist/maestro/index.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "npm run bundle && npm run types:cjs && npm run types:mjs",
+    "build": "npm run bundle && npm run types:mjs",
     "bundle": "webpack",
     "types:cjs": "tsc -p tsconfig.cjs.json",
     "types:mjs": "tsc -p tsconfig.json"
@@ -17,7 +20,6 @@
     "type": "git",
     "url": "git+https://github.com/signver/maestro.git"
   },
-  "keywords": [],
   "author": "Chua Siang Poh",
   "license": "MIT",
   "bugs": {
@@ -35,7 +37,6 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },
-  "type": "module",
   "workspaces": [
     "packages/config"
   ]

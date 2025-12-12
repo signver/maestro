@@ -34,42 +34,6 @@ const baseConfig = {
   },
 };
 
-const coreConfig = {
-  ...baseConfig,
-  entry: "./src/core/index.ts",
-  output: {
-    ...baseConfig.output,
-    path: path.resolve(projectPath, "dist/core"),
-  },
-};
-
-const coreOutputs = [
-  {
-    ...coreConfig,
-    experiments: {
-      outputModule: true,
-    },
-    output: {
-      ...coreConfig.output,
-      filename: "maestro-core.mjs",
-      library: {
-        type: "module",
-      },
-    },
-  },
-  {
-    ...coreConfig,
-    output: {
-      ...coreConfig.output,
-      filename: "maestro-core.cjs",
-      library: {
-        name: "maestro",
-        type: "commonjs2",
-      },
-    },
-  },
-];
-
 const distOutputs = [
   {
     ...baseConfig,
@@ -99,4 +63,4 @@ const distOutputs = [
 ];
 
 /** @type {Array<import("webpack").Configuration>} */
-export default [...coreOutputs, ...distOutputs];
+export default [...distOutputs];
